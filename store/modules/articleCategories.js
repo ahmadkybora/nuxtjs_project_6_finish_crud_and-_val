@@ -46,12 +46,13 @@ const actions = {
      * @param context
      */
     isArticleCategories(context) {
-        Axios.get(Axios.defaults.baseURL + 'article')
+        Axios.get(Axios.defaults.baseURL + 'article-categories')
             .then(res => {
-                const isArticleCategories = res.data.data.articles;
-                const popularArticleCategories = res.data.data.popular_articles;
+                const isArticleCategories = res.data.data;
+                console.log(isArticleCategories);
+                //const popularArticleCategories = res.data.data.popular_articles;
                 context.commit('isArticleCategories', isArticleCategories);
-                context.commit('popularArticleCategories', popularArticleCategories)
+                //context.commit('popularArticleCategories', popularArticleCategories)
             }).catch(err => {
             console.log(err)
         })

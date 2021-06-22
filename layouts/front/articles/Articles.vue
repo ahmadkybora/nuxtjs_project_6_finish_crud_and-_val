@@ -30,9 +30,8 @@
                         <div class="card-body">
                             <!--<h5 class="card-title" v-text="article.title.substring(0, 10)"></h5>
                             <p class="card-text" v-text="article.description.substring(0, 10)"></p>-->
-                            <h5 class="card-title" v-text="article.title.substring(0, 10)"></h5>
-                            <p class="card-text" v-text="article.description.substring(0, 10)"></p>
-                            <p class="card-text">Price: {{ article.price }}</p>
+                            <h5 class="card-title" v-text="article.name"></h5>
+                            <p class="card-text" v-text="article.description"></p>
                         </div>
                         <div class="card-footer">
                             <div class="row">
@@ -77,7 +76,7 @@
             return this.$store.dispatch('Articles/isArticles');
         },
         computed: mapState({
-            articles: state => state.Articles.isArticles
+            articles: state => state.Articles.isArticles.data
         }),
         methods: {
             likes(product) {

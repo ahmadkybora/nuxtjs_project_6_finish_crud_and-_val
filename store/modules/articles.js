@@ -23,10 +23,10 @@ const getters = {
 const actions = {
     isArticles (context) {
         Axios.get(Axios.defaults.baseURL + 'articles').then(res => {
-            const isArticles = res.data.data.articles;
-            const popularArticles = res.data.data.popular_articles;
+            const isArticles = res.data.data;
+            //const popularArticles = res.data.data.popular_articles;
             context.commit('isArticles', isArticles);
-            context.commit('popularArticles', popularArticles)
+            //context.commit('popularArticles', popularArticles)
         }).catch(err => {
             console.log(err)
         })

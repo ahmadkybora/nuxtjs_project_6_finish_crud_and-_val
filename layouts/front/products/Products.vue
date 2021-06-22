@@ -31,7 +31,7 @@
                             <img v-else
                                  class="card-img-top
                          float-right"
-                                 :src="'localhost:8000/storage/' + product.icon"
+                                 :src="product.image"
                                  alt="Card image cap"
                                  style="width: 230px; height:150px;">
                             <!--//-->

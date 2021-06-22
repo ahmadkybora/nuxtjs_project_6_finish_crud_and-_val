@@ -46,8 +46,9 @@ const actions = {
      *
      * @param context
      */
-    isProductCategories(context) {
-        Axios.get(Axios.defaults.baseURL + 'product-categories').then(res => {
+    async isProductCategories(context) {
+        await Axios.get(Axios.defaults.baseURL + 'product-categories')
+            .then(res => {
             const isProductCategories = res.data.data;
             //const popularProductCategories = res.data.data.popular_product_categories;
             context.commit('isProductCategories', isProductCategories);

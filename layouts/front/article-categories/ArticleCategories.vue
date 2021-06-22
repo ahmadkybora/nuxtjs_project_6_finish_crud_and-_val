@@ -25,14 +25,13 @@
                              src="../../../assets/loader.gif"
                              alt="Card image cap"
                              style="width: 230px; height:150px;">
-                        <img v-else class="card-img-top float-right" :src="category.icon" alt="Card image cap"
+                        <img v-else class="card-img-top float-right" :src="category.image" alt="Card image cap"
                              style="width:150px;">
                         <div class="card-body">
                             <!--<h5 class="card-title" v-text="category.title.substring(0, 10)"></h5>
                             <p class="card-text" v-text="category.description.substring(0, 10)"></p>-->
-                            <h5 class="card-title" v-text="category.title"></h5>
+                            <h5 class="card-title" v-text="category.name"></h5>
                             <p class="card-text" v-text="category.description"></p>
-                            <p class="card-text">Price: {{ category.price }}</p>
                         </div>
                         <div class="card-footer">
                             <div class="row">
@@ -77,7 +76,7 @@
             return this.$store.dispatch('ArticleCategories/isArticleCategories');
         },
         computed: mapState({
-            categories: state => state.Articles.isArticles
+            categories: state => state.ArticleCategories.isArticleCategories.data
         }),
         methods: {
             likes(product) {
